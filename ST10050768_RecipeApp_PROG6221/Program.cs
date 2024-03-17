@@ -5,7 +5,11 @@
         static string? recipeDetails;
         static int noOfIngredients;
         static string? name;
+        static string? quantity;
+        static string? unitOfMeasurement;
         static List<string> ingredientName =new List<string>();
+        static List<string> ingredientQuantity = new List<string>();
+        static List<string> ingredientUnitOfMeasurement = new List<string>();
         static string? noOfSteps;
         static List<string>? recipeSteps;
         static void Main(string[] args)
@@ -19,9 +23,15 @@
                 Console.WriteLine("Enter name of ingredient");
                 name = Console.ReadLine();
                 ingredientName.Add(name);
+                Console.WriteLine("Enter quantity of ingredient");
+                quantity = Console.ReadLine();
+                ingredientQuantity.Add(quantity);
+                Console.WriteLine("Enter unit of measurement for ingredient");
+                unitOfMeasurement = Console.ReadLine();
+                ingredientUnitOfMeasurement.Add(unitOfMeasurement);
             }
-            new Recipe(recipeDetails, ingredientName);
-            Console.WriteLine(new Recipe(recipeDetails, ingredientName).toString());
+            new Recipe(recipeDetails, ingredientName,ingredientQuantity,ingredientUnitOfMeasurement);
+            Console.WriteLine(new Recipe(recipeDetails, ingredientName,ingredientQuantity,ingredientUnitOfMeasurement).toString());
         }
     }
 }
