@@ -8,12 +8,14 @@ namespace ST10050768_RecipeApp_PROG6221
 {
     public class Recipe
     {
+        //Variable Declarations
         private string recipeDetails { get; set; }
         private List<string> ingredientName { get; set; }
         private List<string> ingredientQuantity { get; set; }
         private List<string> ingredientUnitOfMeasurement { get; set; }
         private List<string> recipeSteps { get; set; }
 
+        //Constructor with parameters created
         public Recipe(string recipeDetails, List<string> ingredientName, List<string> ingredientQuantity, List<string> ingredientUnitOfMeasurement, List<string> recipeSteps)
         {
             this.recipeDetails = recipeDetails;
@@ -22,6 +24,8 @@ namespace ST10050768_RecipeApp_PROG6221
             this.ingredientUnitOfMeasurement = ingredientUnitOfMeasurement;
             this.recipeSteps = recipeSteps;
         }
+
+        //toString method created to display recipe info
         public string toString()
         {
             return "recipe: " + recipeDetails + "" +

@@ -2,6 +2,7 @@
 {
     public class Program
     {
+        //Variable Declarations
         static string? recipeDetails;
         static int noOfIngredients;
         static string? name;
@@ -15,10 +16,13 @@
         static List<string>? recipeSteps = new List<string>();
         static void Main(string[] args)
         {
+            //Allows users to enter their recipe name as well as the number of ingredients needed for that recipe
             Console.WriteLine("Enter Recipe");
             recipeDetails = Console.ReadLine();
             Console.WriteLine("Enter number of ingredients");
             noOfIngredients = int.Parse(Console.ReadLine());
+
+            //Amount of times users will be able to enter their ingredients info and add it into their respective arrays
             for (int i = 0; i < noOfIngredients; i++)
             {
                 Console.WriteLine("Enter name of ingredient");
@@ -31,9 +35,11 @@
                 unitOfMeasurement = Console.ReadLine();
                 ingredientUnitOfMeasurement.Add(unitOfMeasurement);
             }
-
+            //Allows user to enter number of steps needed to take to make recipe
             Console.WriteLine($"Enter number of steps for {recipeDetails} recipe");
             noOfSteps = int.Parse(Console.ReadLine());
+
+            //Amount of times users will be able to write the steps needed to take to make recipe and add it to the array
             for (int i = 0;i < noOfSteps;i++)
             {
                 Console.WriteLine($"Enter step {i+1}");
@@ -41,6 +47,7 @@
                 recipeSteps.Add(steps);
             }
             
+            //Displays the recipe information
             Console.WriteLine(new Recipe(recipeDetails, ingredientName,ingredientQuantity,ingredientUnitOfMeasurement,recipeSteps).toString());
         }
     }
